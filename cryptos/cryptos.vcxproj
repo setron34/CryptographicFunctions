@@ -141,12 +141,8 @@
   <ItemGroup>
     <ClCompile Include="BerlekampMassey.cpp" />
     <ClCompile Include="cryptos.cpp" />
-    <ClCompile Include="Hashes.cpp" />
     <ClCompile Include="MD5.cpp" />
     <ClCompile Include="SHA1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Hashes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
