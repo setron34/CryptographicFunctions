@@ -15,7 +15,7 @@ public:
 
 		for (size_t i = 0; i < paddedDataLen / 16; ++i) {
 			uint32_t* X = new uint32_t[16];
-			memcpy(X, paddedData + i * 16, sizeof(uint32_t) * 16);
+			memcpy(X, paddedData + i * 16, 64);
 			uint32_t AA = A;
 			uint32_t BB = B;
 			uint32_t CC = C;
@@ -112,15 +112,8 @@ public:
 			C = C + CC;
 			D = D + DD;
 		}
-		uint8_t* outputData = new uint8_t[16];
-		memcpy(outputData, new uint32_t[4]{ A, B, C, D }, 16);
-		char* outputString = new char[32];
-		char* dataToHex = new char[16]{ '0', '1' , '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-		for (int i = 0; i < 16; ++i) {
-			outputString[i * 2 + 0] = dataToHex[outputData[i] / 16];
-			outputString[i * 2 + 1] = dataToHex[outputData[i] % 16];
-		}
-		return outputString;
+
+		return dataToOutputString(A, B, C, D);
 	}
 
 private:
@@ -140,6 +133,19 @@ private:
 		paddedData[paddedDataLen - 2] = inputStringLen << 3;  //<< 3
 		return paddedData;
 	}
+
+	static char* dataToOutputString(uint32_t A, uint32_t B, uint32_t C, uint32_t D) {
+		uint8_t* outputData = new uint8_t[16];
+		memcpy(outputData, new uint32_t[4]{ A, B, C, D }, 16);
+		char* outputString = new char[32];
+		char* dataToHex = new char[16]{ '0', '1' , '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+		for (int i = 0; i < 16; ++i) {
+			outputString[i * 2 + 0] = dataToHex[outputData[i] / 16];
+			outputString[i * 2 + 1] = dataToHex[outputData[i] % 16];
+		}
+		return outputString;
+	}
+
 	static inline uint32_t F(uint32_t X, uint32_t Y, uint32_t Z) { //F(X, Y, Z) = XY v not(X)Z
 		return (X & Y) | (~X & Z); 
 	} 
