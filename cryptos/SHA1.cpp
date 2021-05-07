@@ -4,14 +4,10 @@
 
 class SHA1 {
 public:
-	static char* EvaluateMethod1(char* inputString, uint64_t inputLen) {
+	static char* Evaluate(char* inputString, uint64_t inputLen) {
 		uint64_t paddedDataLen;
 		uint32_t* paddedData = extendString(inputString, inputLen, paddedDataLen);
-		uint32_t A;
-		uint32_t B;
-		uint32_t C;
-		uint32_t D;
-		uint32_t E;
+		uint32_t A, B, C, D, E;
 		uint32_t H0 = 0x67452301;
 		uint32_t H1 = 0xEFCDAB89;
 		uint32_t H2 = 0x98BADCFE;
@@ -30,7 +26,7 @@ public:
 		for (size_t i = 0; i < paddedDataLen / 16; ++i) { //M(i) = paddedData[16 * i]..paddedData[16 * i + 15]
 			memcpy(W, paddedData + i * 16, 64); //copy M(i) to W[0]..W[15]
 			for (size_t t = 16; t < 80; ++t) {
-				W[t] = circularShift(W[t - 3] ^ W[t - 8] ^ W[t - 14] ^ W[t - 16], 1); //W(t) = S^1(W(t-3) XOR W(t-8) XOR W(t-14) XOR W(t-16))
+				W[t] = rotateLeft(W[t - 3] ^ W[t - 8] ^ W[t - 14] ^ W[t - 16], 1); //W(t) = S^1(W(t-3) XOR W(t-8) XOR W(t-14) XOR W(t-16))
 			}
 			A = H0;
 			B = H1;
@@ -38,10 +34,10 @@ public:
 			D = H3;
 			E = H4;
 			for (size_t t = 0; t < 80; ++t) {
-				TEMP = circularShift(A, 5) + f(t, B, C, D) + E + W[t] + K[t];
+				TEMP = rotateLeft(A, 5) + f(t, B, C, D) + E + W[t] + K[t];
 				E = D;  
 				D = C;  
-				C = circularShift(B, 30);
+				C = rotateLeft(B, 30);
 				B = A; 
 				A = TEMP;
 			}
@@ -86,7 +82,7 @@ private:
 		return B ^ C ^ D;
 	}
 
-	static inline uint32_t circularShift(uint32_t x, uint32_t s) {
+	static inline uint32_t rotateLeft(uint32_t x, uint32_t s) {
 		return x << s | x >> (32 - s);
 	}
 

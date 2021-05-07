@@ -27,5 +27,11 @@
     <ClCompile Include="SHA1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SHA256.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SHA512.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

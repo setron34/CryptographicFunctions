@@ -143,6 +143,8 @@
     <ClCompile Include="cryptos.cpp" />
     <ClCompile Include="MD5.cpp" />
     <ClCompile Include="SHA1.cpp" />
+    <ClCompile Include="SHA256.cpp" />
+    <ClCompile Include="SHA512.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
