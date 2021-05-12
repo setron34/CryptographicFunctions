@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include "Algos.cpp"
 
 class SHA1 {
 public:
@@ -26,7 +27,7 @@ public:
 		for (size_t i = 0; i < paddedDataLen / 16; ++i) { //M(i) = paddedData[16 * i]..paddedData[16 * i + 15]
 			memcpy(W, paddedData + i * 16, 64); //copy M(i) to W[0]..W[15]
 			for (size_t t = 16; t < 80; ++t) {
-				W[t] = rotateLeft(W[t - 3] ^ W[t - 8] ^ W[t - 14] ^ W[t - 16], 1); //W(t) = S^1(W(t-3) XOR W(t-8) XOR W(t-14) XOR W(t-16))
+				W[t] = Algos::ROTL32(W[t - 3] ^ W[t - 8] ^ W[t - 14] ^ W[t - 16], 1); //W(t) = S^1(W(t-3) XOR W(t-8) XOR W(t-14) XOR W(t-16))
 			}
 			A = H0;
 			B = H1;
@@ -34,10 +35,10 @@ public:
 			D = H3;
 			E = H4;
 			for (size_t t = 0; t < 80; ++t) {
-				TEMP = rotateLeft(A, 5) + f(t, B, C, D) + E + W[t] + K[t];
+				TEMP = Algos::ROTL32(A, 5) + f(t, B, C, D) + E + W[t] + K[t];
 				E = D;  
 				D = C;  
-				C = rotateLeft(B, 30);
+				C = Algos::ROTL32(B, 30);
 				B = A; 
 				A = TEMP;
 			}
@@ -80,10 +81,6 @@ private:
 			return (B & C) | (B & D) | (C & D);
 		}
 		return B ^ C ^ D;
-	}
-
-	static inline uint32_t rotateLeft(uint32_t x, uint32_t s) {
-		return x << s | x >> (32 - s);
 	}
 
 	static char* dataToOutputString(uint32_t H0, uint32_t H1, uint32_t H2, uint32_t H3, uint32_t H4) {

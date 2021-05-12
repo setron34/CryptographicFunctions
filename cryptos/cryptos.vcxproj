@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BerlekampMassey.cpp" />
+    <ClCompile Include="Algos.cpp" />
+    <ClCompile Include="BLAKE2s.cpp" />
     <ClCompile Include="cryptos.cpp" />
     <ClCompile Include="MD5.cpp" />
     <ClCompile Include="SHA1.cpp" />

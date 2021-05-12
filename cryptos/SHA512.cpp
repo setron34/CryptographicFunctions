@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
+#include "Algos.cpp"
 
 class SHA512 {
 public:
@@ -89,14 +90,6 @@ private:
 		return paddedData;
 	}
 
-	static inline uint64_t rotateLeft(uint64_t x, uint64_t s) {
-		return x << s | x >> (64 - s);
-	}
-
-	static inline uint64_t rotateRight(uint64_t x, uint64_t s) {
-		return x >> s | x << (64 - s);
-	}
-
 	static inline uint64_t Ch(uint64_t x, uint64_t y, uint64_t z) {
 		return (x & y) ^ (~x & z);
 	}
@@ -106,19 +99,19 @@ private:
 	}
 
 	static inline uint64_t upperSigma0(uint64_t x) {
-		return rotateRight(x, 28) ^ rotateRight(x, 34) ^ rotateRight(x, 39);
+		return Algos::ROTR64(x, 28) ^ Algos::ROTR64(x, 34) ^ Algos::ROTR64(x, 39);
 	}
 
 	static inline uint64_t upperSigma1(uint64_t x) {
-		return rotateRight(x, 14) ^ rotateRight(x, 18) ^ rotateRight(x, 41);
+		return Algos::ROTR64(x, 14) ^ Algos::ROTR64(x, 18) ^ Algos::ROTR64(x, 41);
 	}
 
 	static inline uint64_t lowerSigma0(uint64_t x) {
-		return rotateRight(x, 1) ^ rotateRight(x, 8) ^ (x >> 7);
+		return Algos::ROTR64(x, 1) ^ Algos::ROTR64(x, 8) ^ (x >> 7);
 	}
 
 	static inline uint64_t lowerSigma1(uint64_t x) {
-		return rotateRight(x, 19) ^ rotateRight(x, 61) ^ (x >> 6);
+		return Algos::ROTR64(x, 19) ^ Algos::ROTR64(x, 61) ^ (x >> 6);
 	}
 
 	static char* dataToOutputString(uint64_t* H) {

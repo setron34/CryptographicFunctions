@@ -1,6 +1,7 @@
 #include <cstdint>
 #include <cmath>
 #include <cstring>
+#include "Algos.cpp"
 
 class MD5
 {
@@ -159,9 +160,6 @@ private:
 		return Y ^ (X | ~Z);
 	}
 	static inline void roundFunc(uint32_t& A, uint32_t& B, uint32_t& C, uint32_t& D, uint32_t (*func)(uint32_t, uint32_t, uint32_t), int Xk, int s, int Ti) {
-		A = B + rotateLeft(A + func(B, C, D) + Xk + Ti, s);
-	}
-	static inline uint32_t rotateLeft(uint32_t x, uint32_t s) {
-		return x << s | x >> (32 - s);
+		A = B + Algos::ROTL32(A + func(B, C, D) + Xk + Ti, s);
 	}
 };

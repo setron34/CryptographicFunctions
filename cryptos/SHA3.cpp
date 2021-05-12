@@ -4,7 +4,7 @@
 #include <vector>
 
 class SHA3 {
-public:
+private:
 	class stArray {
 	private:
 		std::vector< std::vector< std::vector<bool> > >* A;
@@ -286,6 +286,8 @@ public:
 		}
 		return v;
 	}
+
+public:
 	static std::string SHA3_224(std::string s) {
 		return toString(keccak(448, conc(toBitString(s), std::vector<bool>{0, 1}), 224));
 	}

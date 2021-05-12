@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <bitset>
+#include "Algos.cpp"
 
 class SHA256 {
 public:
@@ -76,14 +77,6 @@ private:
 		return paddedData;
 	}
 
-	static inline uint32_t rotateLeft(uint32_t x, uint32_t s) {
-		return x << s | x >> (32 - s);
-	}
-
-	static inline uint32_t rotateRight(uint32_t x, uint32_t s) {
-		return x >> s | x << (32 - s);
-	}
-
 	static inline uint32_t Ch(uint32_t x, uint32_t y, uint32_t z) {
 		return (x & y) ^ (~x & z);
 	}
@@ -93,19 +86,19 @@ private:
 	}
 
 	static inline uint32_t upperSigma0(uint32_t x) {
-		return rotateRight(x, 2) ^ rotateRight(x, 13) ^ rotateRight(x, 22);
+		return Algos::ROTR32(x, 2) ^ Algos::ROTR32(x, 13) ^ Algos::ROTR32(x, 22);
 	}
 
 	static inline uint32_t upperSigma1(uint32_t x) {
-		return rotateRight(x, 6) ^ rotateRight(x, 11) ^ rotateRight(x, 25);
+		return Algos::ROTR32(x, 6) ^ Algos::ROTR32(x, 11) ^ Algos::ROTR32(x, 25);
 	}
 
 	static inline uint32_t lowerSigma0(uint32_t x) {
-		return rotateRight(x, 7) ^ rotateRight(x, 18) ^ (x >> 3);
+		return Algos::ROTR32(x, 7) ^ Algos::ROTR32(x, 18) ^ (x >> 3);
 	}
 
 	static inline uint32_t lowerSigma1(uint32_t x) {
-		return rotateRight(x, 17) ^ rotateRight(x, 19) ^ (x >> 10);
+		return Algos::ROTR32(x, 17) ^ Algos::ROTR32(x, 19) ^ (x >> 10);
 	}
 
 	static char* dataToOutputString(uint32_t* H) {

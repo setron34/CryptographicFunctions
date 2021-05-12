@@ -18,9 +18,6 @@
     <ClCompile Include="cryptos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BerlekampMassey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MD5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SHA3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BLAKE2s.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Algos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
