@@ -22,10 +22,10 @@
 > - [x] Blake2b-256
 > - [x] Blake2b-384
 > - [x] Blake2b-512
-- [] Whirlpool
-- [] Old GOST
-- [] Stribog
-- [] BLAKE3
-- [] RIPEMD
-- [] KangarooTwelve
-- [] MarsupilamiFourteen
+- [ ] Whirlpool
+- [ ] Old GOST
+- [ ] Stribog
+- [ ] BLAKE3
+- [ ] RIPEMD
+- [ ] KangarooTwelve
+- [ ] MarsupilamiFourteen
