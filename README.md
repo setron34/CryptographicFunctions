@@ -3,8 +3,9 @@
 ### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
-- [x] SHA-256
-- [x] SHA-512
+- [x] SHA-2
+> - [x] SHA-256
+> - [x] SHA-512
 - [x] Keccak
 > - [x] SHA3-224
 > - [x] SHA3-256
