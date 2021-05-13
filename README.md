@@ -30,6 +30,8 @@
 - [ ] MarsupilamiFourteen
 
 #### ToDo
+- [x] Readme file
+- [x] ToDo list
 - [x] CMake
 - [ ] Tests
 - [ ] Move BitStringConvert functions to Algos class
