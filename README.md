@@ -1,4 +1,5 @@
 # Implementation of some hash algorithms 
+##I've tried to make it without any optimizations (like in original RFC publications)
 ### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
