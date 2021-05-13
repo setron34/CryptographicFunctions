@@ -28,4 +28,4 @@
 - [ ] RIPEMD
 - [ ] KangarooTwelve
 - [ ] MarsupilamiFourteen
-- [ ] Tests
+- [ ] **Tests**
