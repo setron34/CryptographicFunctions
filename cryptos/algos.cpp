@@ -1,7 +1,7 @@
+#pragma once
 #include <cstdint>
 
-class Algos
-{
+class Algos {
 public:
 	static inline uint32_t ROTL32(uint32_t x, uint32_t s) {
 		return x << s | x >> (32 - s);

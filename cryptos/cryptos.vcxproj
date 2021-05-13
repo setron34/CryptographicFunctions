@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algos.cpp" />
+    <ClCompile Include="Blake2b.cpp" />
     <ClCompile Include="BLAKE2s.cpp" />
     <ClCompile Include="cryptos.cpp" />
     <ClCompile Include="MD5.cpp" />
