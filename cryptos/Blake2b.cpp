@@ -5,16 +5,16 @@
 
 class BLAKE2b {
 public:
+	static char* BLAKE2b160(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
+		return Evaluate(inputString, inputLen, key, keySize, 20);
+	}
+
 	static char* BLAKE2b256(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
 		return Evaluate(inputString, inputLen, key, keySize, 32);
 	}
 
-	static char* BLAKE2b320(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
-		return Evaluate(inputString, inputLen, key, keySize, 40);
-	}
-
-	static char* BLAKE2b448(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
-		return Evaluate(inputString, inputLen, key, keySize, 56);
+	static char* BLAKE2b384(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
+		return Evaluate(inputString, inputLen, key, keySize, 48);
 	}
 
 	static char* BLAKE2b512(const char* inputString, uint64_t inputLen, const char* key, uint32_t keySize) {
