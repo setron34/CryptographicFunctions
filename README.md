@@ -1,4 +1,4 @@
-# **CryptographicFunctions**
+<p align="center"># **Hash Algorithms**</p>
 ## Implementation of some hash algorithms 
 ## Ive tried to make it without any changes (like in original RFC publications)
 
