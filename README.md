@@ -29,3 +29,5 @@
 - [ ] KangarooTwelve
 - [ ] MarsupilamiFourteen
 - [ ] **Tests**
+- [ ] **Fill Algos class**
+- [ ] **Try to change uintX_t to uint_fastX_t**
