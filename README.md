@@ -1,6 +1,5 @@
 # Implementation of some hash algorithms 
-## I've tried to make it without any optimizations (like in original RFC publications)
-#### Hash algorithms:
+### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
 - [x] SHA-2
@@ -29,7 +28,7 @@
 - [ ] KangarooTwelve
 - [ ] MarsupilamiFourteen
 
-#### ToDo
+### ToDo
 - [x] Readme file
 - [x] ToDo list
 - [x] CMake
