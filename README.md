@@ -1,7 +1,5 @@
-# Hash Algorithms 
-## Implementation of some hash algorithms 
-Ive tried to make it without any changes (like in original RFC publications)
-
+# Implementation of some hash algorithms 
+##Ive tried to make it without any changes (like in original RFC publications)
 ### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
