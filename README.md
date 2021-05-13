@@ -34,4 +34,4 @@
 - [x] ToDo list
 - [x] CMake
 - [ ] Tests
-- [ ] Move BitStringConvert functions to Algos class
+- [ ] Move byte string convertion functions to Algos class
