@@ -1,6 +1,6 @@
 # Implementation of some hash algorithms 
-## Ive tried to do it without any changes (like in original RFC publications)
-### Hash algorithms:
+## I've tried to make it without any optimizations (like in original RFC publications)
+#### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
 - [x] SHA-2
@@ -28,5 +28,7 @@
 - [ ] RIPEMD
 - [ ] KangarooTwelve
 - [ ] MarsupilamiFourteen
-- [ ] **Tests**
-- [ ] **Fill Algos class**
+
+#### ToDo
+- [ ] Tests
+- [ ] Move BitStringConvert functions to Algos class
