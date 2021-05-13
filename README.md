@@ -1,6 +1,4 @@
-<p align="center">
-  # Hash Algorithms 
-</p>
+# Hash Algorithms 
 ## Implementation of some hash algorithms 
 ## Ive tried to make it without any changes (like in original RFC publications)
 
