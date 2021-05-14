@@ -1,4 +1,6 @@
-# Implementation of some hash algorithms 
+# Hash Algorithms
+## Implementation of some hash algorithms 
+### I've tried to make it without any optimizations (like in original RFC publications)
 ### Hash algorithms:
 - [x] MD5
 - [x] SHA-1 (Method 1)
@@ -29,8 +31,7 @@
 - [ ] MarsupilamiFourteen
 
 ### ToDo
-- [x] Readme file
-- [x] ToDo list
 - [x] CMake
+- [x] Headers
 - [ ] Tests
 - [ ] Move byte string convertion functions to Algos class
