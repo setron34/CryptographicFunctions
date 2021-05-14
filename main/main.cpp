@@ -11,7 +11,8 @@
 int main()
 {
 	auto t1 = std::chrono::high_resolution_clock::now();
-	std::string ans = BLAKE2b::BLAKE2b512("xx", 2, "", 0); //BLAKE2b512 is not working anymore
+	
+	std::string ans = SHA1::Evaluate(m1, 321); //BLAKE2b512 is not working anymore
 	ans.resize(128);
 	auto t2 = std::chrono::high_resolution_clock::now();
 	double duration = (double)std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count() / 1000000;
