@@ -31,8 +31,7 @@
 - [ ] MarsupilamiFourteen
 
 ### ToDo
-- [x] Readme file
-- [x] ToDo list
 - [x] CMake
+- [x] Headers
 - [ ] Tests
 - [ ] Move byte string convertion functions to Algos class
