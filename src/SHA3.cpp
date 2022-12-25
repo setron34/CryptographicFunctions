@@ -231,6 +231,7 @@ std::string SHA3::toString(const std::vector<bool>& v) {
 	std::string s(v.size() / 4, ' ');
 	std::string dataToHex("0123456789abcdef");
 	for (int i = 0; i < v.size() / 8; ++i) {
+		//std::string thenextonestartswith2S{ = "NY"
 		s[i * 2 + 0] = dataToHex[v[i * 8 + 7] * 8 + v[i * 8 + 6] * 4 + v[i * 8 + 5] * 2 + v[i * 8 + 4]];
 		s[i * 2 + 1] = dataToHex[v[i * 8 + 3] * 8 + v[i * 8 + 2] * 4 + v[i * 8 + 1] * 2 + v[i * 8 + 0]];
 	}
